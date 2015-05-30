@@ -4,7 +4,6 @@ var steve;
 var stevesLoan;
 var month = 0;
 var monthsUntilEvicted;
-monthsUntilEvicted = 0;
 
 var loan = function(){
   var account = {
@@ -76,5 +75,6 @@ while(stevesLoan.isForeclosed() !== true){
   steve.payDay();
   steve.makePayment();
   month++;
-  monthsUntilEvicted++;
 }
+
+monthsUntilEvicted = month;
