@@ -23,16 +23,19 @@ var loan = function(){
 
   return {
     getBalance : function(){
-
+      return account.balance;
     },
-    receivePayment : function(){
-
+    receivePayment : function(amount){
+      if(amount < account.monthlyPayment){
+        missPayment();
+      }
+      account.balance -= amount;
     },
     getMonthlyPayment : function(){
-
+      return account.monthlyPayment;
     },
     isForeclosed : function(){
-
+      return account.foreclosed;
     }
   }
 };
